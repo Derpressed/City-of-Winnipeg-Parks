@@ -28,5 +28,22 @@ const mapHeaderSearchButton = document.getElementById("map-page-search");
 // map-page header search text
 const mapHeaderSearchText = document.getElementById("map-page-search-text");
 
+// map-page map mode button (light/dark)
+const mapModeButton = document.getElementById("colour-mode-button");
+
+const lightMap = L.tileLayer("https://api.maptiler.com/maps/streets-v4/{z}/{x}/{y}.png?key=wguwhsfBJybcFn9ybAg8", {
+    tileSize: 512,
+    zoomOffset: -1,
+    attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+});
+
+const darkMap = L.tileLayer("https://api.maptiler.com/maps/streets-v4-dark/{z}/{x}/{y}.png?key=wguwhsfBJybcFn9ybAg8", {
+    tileSize: 512,
+    zoomOffset: -1,
+    attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+})
+
+var map = L.map("map").setView([49.87917848009978, -97.14560995229286], 11);
+
 // array of textboxes within the website
-const textBoxes = [mainHeaderSearchText, mainSearchText];
+const textBoxes = [mainHeaderSearchText, mainSearchText, mapHeaderSearchText];
