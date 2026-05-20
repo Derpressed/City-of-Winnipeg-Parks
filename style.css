@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    overflow: hidden;
 }
 
 #container {
@@ -11,6 +12,27 @@ body {
     background-color: rgb(100, 57, 8);
 }
 
+#inner-container {
+    position: relative;
+
+    background-color: black;
+
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+
+    height: 850px;
+    width: 1500px;
+
+
+    border-radius: 30px;
+
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.55);
+
+    transition: top 1.0s ease-in-out;
+}
+
 #maple-background {
     position: absolute;
 
@@ -19,12 +41,75 @@ body {
     
     transform: translate(-50%, -50%);
 
-    height: 90%;
-    width: 80%;
+    height: 100%;
+    width: 100%;
 
     border-radius: 30px;
 
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.55);
+}
+
+
+#main-hotbar {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.24);
+
+    left: 50%;
+    
+    transform: translateX(-50%);
+
+    height: 55px;
+    width: 100%;
+
+    border-radius: 30px 30px 0 0;
+}
+
+#main-hotbar button {
+    position: absolute;
+    
+    background-color: rgba(0, 0, 0, 0);
+    height: 100%;
+    width: 100px;
+    border: 0;
+
+    border-radius: 30px 0 0 0;
+}
+
+#hotbar-search {
+    position: absolute;
+    top: 17px;
+    left: 40px;
+    height: 25px;
+}
+
+#main-hotbar button:hover {
+    background-color: rgb(255, 167, 66);
+    cursor: pointer;
+}
+
+#outer-search-input {
+    position: relative;
+    padding-left: 20px;
+
+    top: 11px;
+    left: 110px;
+
+    height: 30px;
+    
+    width: 0px;
+    opacity: 0;
+    pointer-events: none;
+
+    border: none;
+    border-radius: 0px;
+    transition: width 1s ease-in-out;
+}
+
+#outer-search-input.toggle {
+    width: 300px;
+    opacity: 1;
+    pointer-events: auto;
+    border-radius: 30px;
 }
 
 #text-container {
@@ -46,7 +131,7 @@ body {
     width: 1700px;
 }
 
-#text-container h1 {
+.parks-title {
 
 
     font-family: "Montserrat", sans-serif;
@@ -60,16 +145,19 @@ body {
 
 #text-container div {
     transform: translateY(-200px);
-    display: flex;
+    position: relative;
     
 
     height: 50px;
-
-    
 }
 
 #text-search {
     background-color: transparent;
+    position: absolute;
+
+    left: -150px;
+    height: 40px;
+
     width: 300px;
     cursor: pointer;
     border: none;
@@ -84,25 +172,68 @@ body {
 #text-search img {
     position: relative;
     top: 4px;
-    right: 10px;
+    left: -7px;
     height: 20px;
+
+    transition: left 1s ease-in-out;
 }
 
 #text-search:hover {
     background-color: rgba(0, 0, 0, 0.25);
 }
 
+#inner-search-input {
+    position: absolute;
+    
+    height: 30px;
+    width: 0px;
+    
+    top: 4px;
+    left: -90px;
+
+    border: none;
+    border-radius: 30px;
+
+    padding-left: 20px;
+
+    pointer-events: none;
+    opacity: 0;
+
+    transition: width 1s ease-in-out;
+}
+
+#text-search.toggle {
+    width: 50px;
+}
+
+#text-search.toggle span {
+    opacity: 0;
+}
+
+#text-search.toggle img {
+    top: 10px;
+    left: 0.8px;
+}
+
+#inner-search-input.toggle {
+    width: 210px;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+
 #text-map {
     background-color: transparent;
+    position: absolute;
+
+    left: 150px;
+    height: 40px;
+
     width: 300px;
     cursor: pointer;
     border: none;
     border-radius: 20px;
-    
-    background-color: transparent;
-    width: 300px;
-    cursor: pointer;
-    border: none;
+
 
     color: rgb(255, 255, 255);
     font-family: "Montserrat", sans-serif;
@@ -113,13 +244,106 @@ body {
 }
 
 #text-map img {
-    position: relative;
-    top: 6px;
-    right: 10px;
+    position: absolute;
+    top: 5px;
+    left: 100px;
     height: 26px;
     filter: invert(1);
 }
 
+#text-map span {
+    position: relative;
+    left: 10px;
+}
+
 #text-map:hover {
     background-color: rgba(0, 0, 0, 0.25);
+}
+
+#inner-container.switch {
+    top: -50%;
+}
+
+#container-map {
+    position: absolute;
+    background-color: transparent;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    top: 0px;
+    left: 0px;
+
+    transform: translateY(100%);
+    pointer-events: none;
+    opacity: 0;
+
+    width: 100%;
+    height: 100%;
+
+}
+
+#container-map.switch {
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#map-page-hotbar {
+    position: relative;
+
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.24);
+    height: 50px;
+}
+
+#map-page-hotbar button {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+}
+
+#map-page-hotbar button:hover {
+    background-color: rgb(255, 167, 66);
+}
+
+#map-page-search {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 90px;
+    height: 100%;
+}
+
+#map-page-search-img {
+    position: absolute;
+    height: 28px;
+
+    top: 12px;
+    left: 30px;
+
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+
+.parks-title-hotbar {
+    position: absolute;
+
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: -4px;
+    font-size: 35px;
+
+    left: 50%;
+
+    width: 200px;
+
+    transform: translateX(-50%);
+
+    border: none;
+    background-color: transparent;
+
+    color: rgb(255, 255, 255);
+}
+
+.parks-title-hotbar:hover {
+    cursor: pointer;
 }

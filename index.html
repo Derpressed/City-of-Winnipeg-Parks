@@ -17,32 +17,58 @@
     </head>
 
     <body>
-        <div id="container">
-            <img id="maple-background" src="images/maple-leaves.jpg" alt="Maple-Background-Photo">
 
-            <div id="text-container">
-                <h1>
-                    PARKS
-                </h1>
-                <div>
-                    <button id="text-search">
-                        <img src="images/white-magnifying-glass.png" alt="">
-                        search
+        
+        <div id="container">
+            <div id="inner-container">
+                <img id="maple-background" src="images/maple-leaves.jpg" alt="Maple-Background-Photo">  
+                <div id="main-hotbar">
+                    <button id="hotbar-search-button">
+                        <img id="hotbar-search" src="images/white-magnifying-glass.png" alt="Magnifying-glass">
                     </button>
-                    <button id="text-map">
-                        <img src="images/black-map.png" alt="">
-                        map
-                    </button>
+                    <input id="outer-search-input" type="text">
+                </div>
+                <div id="text-container">
+                    <h1 class="parks-title">
+                        PARKS
+                    </h1>
+                    <div>
+                        <button id="text-search">
+                            <img src="images/white-magnifying-glass.png" alt="">
+                            <span>search</span>
+                        </button>
+                        <input id="inner-search-input" type="text">
+                
+                
+
+                        <button id="text-map">
+                            <img src="images/black-map.png" alt="">
+                            <span>map</span>
+                        </button>
+                    </div>
                 </div>
             </div>
+        </div>
 
+        <div id="container-map">
+            <div id="map-page-hotbar">
+                <button id="map-page-search">
+                    <img id="map-page-search-img" src="images/white-magnifying-glass.png" alt="Magnifying-glass">
+                </button>
+                
+                <button class="parks-title-hotbar">PARKS</button>
+            </div>
+            <div id="">
+
+            </div>
         </div>
 
 
 
 
 
-        <script src="script.js"></script>
+        <script src="scripts/transition.js"></script>
+        <script src="scripts/searchButton.js"></script>
     </body>
 
 
