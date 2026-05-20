@@ -1,24 +1,22 @@
-const mapButton = document.getElementById("text-map");
-const parksTitleButton = document.querySelector(".parks-title-hotbar");
-
-const innerContainer = document.getElementById("inner-container");
-const containerMap = document.getElementById("container-map");
-
-const hotbarSearchText = document.getElementById("outer-search-input");
-const innerSearchText = document.getElementById("text-search");
-
 // button for main-page map
 mapButton.addEventListener("click", () => {
     innerContainer.classList.toggle("switch");
     containerMap.classList.toggle("switch");
 
-    if (hotbarSearchText.classList.contains("toggle")) {
-        hotbarSearchText.classList.toggle("toggle")
+    if (mainHeaderSearchText.classList.contains("toggle")) {
+        mainHeaderSearchText.classList.toggle("toggle")
     }
 
-    if (innerSearchText.classList.contains("toggle")) {
-        innerSearchText.classList.toggle("toggle");
-        innerTextBox.classList.toggle("toggle");
+    if (mainSearchButton.classList.contains("toggle")) {
+        mainSearchText.classList.toggle("toggle");
+        mainSearchButton.classList.toggle("toggle");
+    }
+
+    if (containerMap.classList.contains("switch")) {
+        // container map wants to be turned off
+        containerMap.inert = false;
+    } else {
+        containerMap.inert = true;
     }
 });
 
@@ -26,4 +24,15 @@ mapButton.addEventListener("click", () => {
 parksTitleButton.addEventListener("click", () => {
     innerContainer.classList.toggle("switch");
     containerMap.classList.toggle("switch");
+
+    if (containerMap.classList.contains("switch")) {
+        // container map wants to be turned off
+        containerMap.inert = false;
+    } else {
+        containerMap.inert = true;
+    }
+
+    if (mapHeaderSearchText.classList.contains("toggle")) {
+        mapHeaderSearchText.classList.toggle("toggle");
+    }
 });

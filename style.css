@@ -90,6 +90,7 @@ body {
 #outer-search-input {
     position: relative;
     padding-left: 20px;
+    padding-right: 20px;
 
     top: 11px;
     left: 110px;
@@ -189,12 +190,13 @@ body {
     width: 0px;
     
     top: 4px;
-    left: -90px;
+    left: -95px;
 
     border: none;
     border-radius: 30px;
 
     padding-left: 20px;
+    padding-right: 20px;
 
     pointer-events: none;
     opacity: 0;
@@ -216,7 +218,7 @@ body {
 }
 
 #inner-search-input.toggle {
-    width: 210px;
+    width: 200px;
     pointer-events: auto;
     opacity: 1;
 }
@@ -311,6 +313,7 @@ body {
     left: 0px;
     width: 90px;
     height: 100%;
+    cursor: pointer;
 }
 
 #map-page-search-img {
@@ -347,3 +350,32 @@ body {
 .parks-title-hotbar:hover {
     cursor: pointer;
 }
+
+#map-page-search-text {
+    position: relative;
+
+    top: 9px;
+    left: 100px;
+
+    width: 0px;
+    height: 30px;
+
+    border: none;
+    border-radius: 0px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    transition: width 1s ease-in-out;
+
+    pointer-events: none;
+    opacity: 0;
+}
+
+#map-page-search-text.toggle {
+    border-radius: 30px;
+    width: 300px;
+    pointer-events: auto;
+    opacity: 1;
+}
+
