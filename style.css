@@ -22,7 +22,7 @@ body {
     
     transform: translate(-50%, -50%);
 
-    height: min(850px, 80vh);
+    height: min(850px, 90vh);
     width: min(1500px, 80vw);
 
 
