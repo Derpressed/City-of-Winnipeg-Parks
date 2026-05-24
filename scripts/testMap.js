@@ -1,4 +1,4 @@
-let test = true;
+let test = false;
 
 if (test) {
     containerMap.classList.toggle("switch");
