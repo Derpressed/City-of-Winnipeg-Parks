@@ -43,7 +43,12 @@ const darkMap = L.tileLayer("https://api.maptiler.com/maps/streets-v4-dark/{z}/{
     attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
 })
 
-var map = L.map("map").setView([49.87917848009978, -97.14560995229286], 11);
+const centerCoord = [49.87917848009978, -97.14560995229286];
+var map = L.map("map").setView(centerCoord, 11);
+
+const mapOptionsParent = document.getElementById("map-options-parent");
+
+const mapOriginButton = document.getElementById("map-origin-button");
 
 // array of textboxes within the website
 const textBoxes = [mainHeaderSearchText, mainSearchText, mapHeaderSearchText];
