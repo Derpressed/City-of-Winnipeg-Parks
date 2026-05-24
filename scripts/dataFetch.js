@@ -20,8 +20,10 @@ function onMarkerClick(park) {
 fetch("parkData/parks_and_data.geojson")
     .then((response) => response.json())
     .then(parks => {
-        for (let i = 0; i < parks.features.length; i++) {
-            console.log(parks.features[i]);
-            L.geoJSON(parks.features[i]).addTo(map);
+        for (let i = 0; i < polygon.length; i++) {
+            let polygon = L.geoJSON(parks.features);
+
+            console.log(polygon);
+
         }
     })
