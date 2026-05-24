@@ -31,23 +31,30 @@ const mapHeaderSearchText = document.getElementById("map-page-search-text");
 // map-page map mode button (light/dark)
 const mapModeButton = document.getElementById("colour-mode-button");
 
+// map but lightmode
 const lightMap = L.tileLayer("https://api.maptiler.com/maps/streets-v4/{z}/{x}/{y}.png?key=wguwhsfBJybcFn9ybAg8", {
     tileSize: 512,
     zoomOffset: -1,
     attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
 });
 
+// map but darkmode
 const darkMap = L.tileLayer("https://api.maptiler.com/maps/streets-v4-dark/{z}/{x}/{y}.png?key=wguwhsfBJybcFn9ybAg8", {
     tileSize: 512,
     zoomOffset: -1,
     attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
 })
 
+// center coordinate map of Winnipeg
 const centerCoord = [49.87917848009978, -97.14560995229286];
+
+// our map from Leaflet
 var map = L.map("map").setView(centerCoord, 11);
 
+// mapOptions sidebar
 const mapOptionsParent = document.getElementById("map-options-parent");
 
+// originButton for sidebar
 const mapOriginButton = document.getElementById("map-origin-button");
 
 // array of textboxes within the website

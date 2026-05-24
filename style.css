@@ -498,7 +498,9 @@ body {
     position: relative;
 
     height: 20px;
-    top: 1px;
-    left: -0.6px;
 
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -63%);
 }

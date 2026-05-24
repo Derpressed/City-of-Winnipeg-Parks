@@ -1,0 +1,18 @@
+
+function onMarkerClick(park) {
+    map.setView(park.coordinate, 16);
+}
+
+fetch("parkData/parks.json")
+    .then((response) => response.json())
+    .then((parks) => {
+        for (let i = 0; i < parks.length; i++) {
+        
+            let marker = L.marker(parks[i].coordinate).addTo(map);
+            marker.bindPopup(`<b>${parks[i].name}</b>`, {autoClose: false, closeOnClick: false}).openPopup();
+        
+            marker.on("click", () => {
+                onMarkerClick(parks[i])
+            });
+        }
+    })
