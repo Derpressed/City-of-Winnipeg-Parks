@@ -2,10 +2,14 @@
 let picnicData = "";
 let polygonLayer = "";
 let parkFocused = "";
+let prevMarker = "";
+let validParkArr = [];
+let markerArr = [];
 
 // parkFeatures is features from WPG API
 // parkData is our own JSON
-function onMarkerClick(parkFeatures, parkData) {
+function onMarkerClick(parkFeatures, parkData, marker) {
+    prevMarker = marker;
     
     // IF we see that there is no layer within our map, then add one
     if (polygonLayer === "") {
@@ -27,6 +31,8 @@ function onMarkerClick(parkFeatures, parkData) {
                     return feature.properties.park_name === parkData.name;
                 }
             }).addTo(map);    
+            
+
             parkFocused = parkData.name; // change our park we focus to
         }
     }
@@ -34,7 +40,6 @@ function onMarkerClick(parkFeatures, parkData) {
 
     
     let coordinate = polygonLayer.getBounds().getCenter();
-    console.log(coordinate);
     map.setView(coordinate, 16);
 }
 
@@ -59,13 +64,25 @@ fetch("parkData/parksWPG.geojson")
                 let dataName = picnicData[j].name;
                 if (parkName == dataName) {
                     let centerCoord = (polygon.getBounds().getCenter()); // getting center coordinate to have our marker
+                    
                     let parkMarker = L.marker(centerCoord, 16).addTo(map); // putting our marker at the center coordinate of each park
+                    parkMarker.bindPopup(parkName, {
+                        closeOnClick: false,
+                        autoPan: false,
+                        autoClose: false
+                    });
                     
                     // click event for marker
                     parkMarker.on("click", () => {
-                        onMarkerClick(parks.features[i], picnicData[j]);
+                        onMarkerClick(parks.features[i], picnicData[j], parkMarker);
                     })
+
+                    markerArr.push(parkMarker);
+
+                    validParkArr.push(parks.features[i]);
                 }
             }
         }
     })
+
+console.log(validParkArr);

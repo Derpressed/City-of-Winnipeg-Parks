@@ -21,5 +21,25 @@ mapOriginButton.addEventListener("click", () => {
     map.setView(centerCoord, 11);
 });
 
+let isShowing = false;
+mapShowAllParks.addEventListener("click", () => {
+    
+    if (isShowing == true) {
+        isShowing = false;
 
+        for (let i = 0; i < markerArr.length; i++) {
+            if (markerArr[i].isPopupOpen()) {
+                markerArr[i].closePopup();
+            }
+        }
+    } else {
+        isShowing = true;
+
+        for (let i = 0; i < markerArr.length; i++) {
+            if (markerArr[i].isPopupOpen() == false) {
+                markerArr[i].openPopup();
+            }
+        }
+    }
+});
 

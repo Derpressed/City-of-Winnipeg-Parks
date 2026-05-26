@@ -469,7 +469,8 @@ body {
 }
 
 #map-options-parent.light #colour-mode-button,
-#map-options-parent.light #map-origin-button {
+#map-options-parent.light #map-origin-button,
+#map-options-parent.light #show-all-park-name{
     background-color: rgb(198, 228, 181)
 }
 
@@ -482,7 +483,8 @@ body {
 }
 
 #map-options-parent.dark #colour-mode-button,
-#map-options-parent.dark #map-origin-button {
+#map-options-parent.dark #map-origin-button,
+#map-options-parent.dark #show-all-park-name {
     
     background-color: rgb(39, 54, 122);
 }
@@ -503,4 +505,19 @@ body {
     left: 50%;
 
     transform: translate(-50%, -63%);
+}
+
+#show-all-park-name {
+    position: absolute;
+
+    bottom: 0%;
+    border-radius: 30px;
+    height: 4%;
+    width: 100%;
+
+    border: none;
+}
+
+#show-all-park-name:active {
+    filter: brightness(80%);
 }

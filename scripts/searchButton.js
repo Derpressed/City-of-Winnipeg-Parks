@@ -1,4 +1,5 @@
-
+// picnicData stores all the park names available
+// validParkArr stores all the geoJSON features for ONLY valid parks (with reservations)
 
 mainSearchButton.addEventListener("click", () => {
     if (mainSearchButton.classList.contains("toggle")) {

@@ -57,5 +57,8 @@ const mapOptionsParent = document.getElementById("map-options-parent");
 // originButton for sidebar
 const mapOriginButton = document.getElementById("map-origin-button");
 
+// showAllParkNames for sidebar
+const mapShowAllParks = document.getElementById("show-all-park-name");
+
 // array of textboxes within the website
 const textBoxes = [mainHeaderSearchText, mainSearchText, mapHeaderSearchText];
