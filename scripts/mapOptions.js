@@ -23,22 +23,23 @@ mapOriginButton.addEventListener("click", () => {
 
 let isShowing = false;
 mapShowAllParks.addEventListener("click", () => {
-    
+
     if (isShowing == true) {
         isShowing = false;
 
-        for (let i = 0; i < markerArr.length; i++) {
-            if (markerArr[i].isPopupOpen()) {
-                markerArr[i].closePopup();
-            }
+        for (let i = 0; i < ourParks.length; i++) {
+            map.removeLayer(parksDict[ourParks[i].name].marker);
+            removePolygon(ourParks[i].name);
+            
+            // variable is present within 'mapDataFunc.js'
+            activePolygon = "";
         }
+    
     } else {
         isShowing = true;
 
-        for (let i = 0; i < markerArr.length; i++) {
-            if (markerArr[i].isPopupOpen() == false) {
-                markerArr[i].openPopup();
-            }
+        for (let i = 0; i < ourParks.length; i++) {
+            parksDict[ourParks[i].name].marker.addTo(map);
         }
     }
 });

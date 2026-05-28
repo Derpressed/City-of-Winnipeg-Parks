@@ -1,77 +1,78 @@
 [
-    {"id": 0,
-    "name": "Bruce Park",
-    "coordinate": []
-    },
     {
         "id": 0,
+        "name": "Bruce Park",
+        "reserve": []
+    },
+    {
+        "id": 1,
         "name": "Bunn's Creek Centennial Park",
-        "coordinate": []
+        "reserve": []
     },
     {
-        "id": 0,
+        "id": 2,
         "name": "Crescent Drive Park",
-        "coordinate": []
+        "reserve": []
     },
     {
-        "id": 0,
+        "id": 3,
         "name": "Fraser's Grove Park",
-        "coordinate": []
+        "reserve": []
     },
     {
-        "id": 0,
-        "name": "Harbourview Park & Recreation Complex",
-        "coordinate": []
+        "id": 4,
+        "name": "Harbourview South Optimist Park",
+        "reserve": []
     },
     {
-        "id": 0,
+        "id": 5,
         "name": "Kildonan Park",
-        "coordinate": []
+        "reserve": []
     },
     {
-        "id": 0,
-        "name": "Kings Park",
-        "coordinate": []
+        "id": 6,
+        "name": "King's Park",
+        "reserve": []
     },
     {
-        "id": 0,
-        "name": "La Barrier Park",
-        "coordinate": []
+        "id": 7,
+        "name": "La Barriere Park",
+        "reserve": []
     },
     {
-        "id": 0,
+        "id": 8,
         "name": "Little Mountain Park",
-        "coordinate": []
+        "reserve": []
     },
     {
-        "id": 0,
-        "name": "Provencher Park",
-        "coordinate": []
+        "id": 9,
+        "name": "Provencher Park / Notre Dame C.C",
+        "reserve": []
     },
     {
-        "id": 0,
+        "id": 10,
         "name": "St. John's Park",
-        "coordinate": []
+        "reserve": []
     },
     {
-        "id": 0,
+        "id": 11,
         "name": "St. Vital Park",
-        "coordinate": []
+        "reserve": []
     },
     {
-        "id": 0,
+        "id": 12,
         "name": "Vimy Ridge Memorial Park",
-        "coordinate": []
+        "reserve": []
     },
     {
-        "id": 0,
+        "id": 13,
         "name": "Whittier Park",
-        "coordinate": []
+        "reserve": []
     },
     {
-        "id": 0,
+        "id": 14,
         "name": "Assiniboine Park",
-        "coordinate": []
+        "reserve": []
     }
     
 ]

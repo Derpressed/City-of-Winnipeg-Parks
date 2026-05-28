@@ -31,7 +31,11 @@
                     <button id="hotbar-search-button">
                         <img id="hotbar-search" src="images/white-magnifying-glass.png" alt="Magnifying-glass">
                     </button>
-                    <input id="outer-search-input" type="text">
+                    <input id="outer-search-input" type="text" list="parkSuggestions">
+                    <datalist id="parkSuggestions">
+                        <option value="Parks"></option>
+                    </datalist>
+
                 </div>
                 <div id="text-container">
                     <h1 class="parks-title">
@@ -93,6 +97,7 @@
         <script src="scripts/testMap.js"></script>
         <script src="scripts/mapOptions.js"></script>
         <script src="scripts/dataFetch.js"></script>
+        <script src="scripts/mapDataFunc.js"></script>
     </body>
 
 
